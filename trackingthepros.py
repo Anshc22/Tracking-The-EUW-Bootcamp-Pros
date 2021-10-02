@@ -22,7 +22,7 @@ def clear():
     else:
         _ = system('clear')
 
-
+# Add User Agent
 def main():
     while True:
         url = "https://www.trackingthepros.com/d/list_bootcamp"
@@ -37,7 +37,7 @@ def main():
             "Accept": "application/json, text/javascript, */*; q=0.01",
             "X-Requested-With": "XMLHttpRequest",
             "sec-ch-ua-mobile": "?1",
-            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Mobile Safari/537.36",
+            "User-Agent": "User-Agent",
             "sec-ch-ua": "^\^Chromium^^;v=^\^94^^, ^\^Google"
         }
 
