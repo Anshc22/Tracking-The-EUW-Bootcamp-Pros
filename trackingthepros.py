@@ -22,7 +22,7 @@ def clear():
     else:
         _ = system('clear')
 
-# Add User Agent
+
 def main():
     while True:
         url = "https://www.trackingthepros.com/d/list_bootcamp"
@@ -60,12 +60,17 @@ def main():
                         ']')+2:-4], pro['role'], pro['team_plug'], pro['rankHigh'], pro['rankHighLPNum'], pro['online'][:2]))
 
         clear()
-        for k, v in players.items():
-            print(f'Game Time:- {v[0][6]} Min\n')
-            for player in v:
-                print(
-                    f'{player[3]} | {player[2]} | {player[0]}  :- {player[1]} ({player[4]} {player[5]}LP)')
-            print(f'\n-------******-------\n')
+        if len(players) == 0:
+            print(f'\n---No Players Online----')
+        else:
+            players = {k: v for k, v in sorted(players.items(), key=lambda item: (
+                item[1][0][3], int(item[1][0][5])), reverse=True)}
+            for k, v in players.items():
+                print(f'Game Time:- {v[0][6]} Min\n')
+                for player in v:
+                    print(
+                        f'{player[3]} | {player[2]} | {player[0]}  :- {player[1]} ({player[4]} {player[5]}LP)')
+                print(f'\n-------******-------\n')
 
         time.sleep(30)
 
